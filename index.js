@@ -135,8 +135,8 @@
             } );
         },
 
-        fillFormWithFlatten: function( sourceFile, destinationFile, fieldValues, shouldFlatten, callback ) {
-            this.fillFormWithOptions( sourceFile, destinationFile, fieldValues, shouldFlatten, undefined, callback);
+        fillFormWithFlatten: function( sourceFile, destinationFile, fieldValues, shouldFlatten, tempFDFPath, callback ) {
+            this.fillFormWithOptions( sourceFile, destinationFile, fieldValues, shouldFlatten, tempFDFPath, callback);
         },
 
         fillForm: function( sourceFile, destinationFile, fieldValues, callback) {
