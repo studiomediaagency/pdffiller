@@ -57,7 +57,7 @@
 
             if(nameRegex !== null && (typeof nameRegex) == 'object' ) regName = nameRegex;
 
-            execFile( "pdftk", [sourceFile, "dump_data_fields_utf8"], function (error, stdout, stderr) {
+            execFile( process.env.PDFTK ? process.env.PDFTK : "pdftk", [sourceFile, "dump_data_fields_utf8"], function (error, stdout, stderr) {
                 if (error) {
                     console.log('exec error: ' + error);
                     return callback(error, null);
@@ -117,7 +117,7 @@
             if (shouldFlatten) {
                 args.push("flatten");
             }
-            execFile( "pdftk", args, function (error, stdout, stderr) {
+            execFile( process.env.PDFTK ? process.env.PDFTK : "pdftk", args, function (error, stdout, stderr) {
 
                 if ( error ) {
                     console.log('exec error: ' + error);
